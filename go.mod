@@ -1,4 +1,4 @@
-module github.com/piqoni/matcha
+module github.com/johnongit/matcha
 
 go 1.18
 
