@@ -46,7 +46,7 @@ func summarize(text string) string {
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleAssistant,
-					Content: "Summarize the following text:",
+					Content: "Résumes l'article suivant:",
 				},
 				{
 					Role:    openai.ChatMessageRoleUser,
