@@ -46,7 +46,7 @@ func summarize(text string) string {
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleAssistant,
-					Content: "Créé un texte de vidéo résumant en 1 minute max ceci:",
+					Content: "Create a video text summarizing this in max 121 words. The text must be less than 110 words. The video must start with \"Hello there! Quick dive into today's hot topic coming right up. Smash the like, subscribe, and let’s roll!\". Don't add anything at the end of the text:",
 				},
 				{
 					Role:    openai.ChatMessageRoleUser,
