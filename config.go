@@ -108,7 +108,7 @@ func bootstrapConfig() {
 	} else {
 		markdownDirPath = currentDir
 	}
-	myFeeds = []RSS{}
+	
 	feeds := viper.Get("feeds")
 	if viper.IsSet("weather_latitude") {
 		lat = viper.Get("weather_latitude").(float64)
@@ -140,10 +140,12 @@ func bootstrapConfig() {
 			myFeeds = append(myFeeds, RSS{url: url, limit: limit, summarize: true})
 		}
 	}
-
-	for _, feed := range feeds.([]any) {
-		url, limit := getFeedAndLimit(feed.(string))
-		myFeeds = append(myFeeds, RSS{url: url, limit: limit})
+	if viper.IsSet("feeds") {
+		myFeeds = []RSS{}
+		for _, feed := range feeds.([]any) {
+			url, limit := getFeedAndLimit(feed.(string))
+			myFeeds = append(myFeeds, RSS{url: url, limit: limit})
+		}
 	}
 
 	if viper.IsSet("google_news_keywords") {
