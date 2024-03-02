@@ -46,7 +46,7 @@ func summarize(text string) string {
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleAssistant,
-					Content: "Résumes l'article suivant en le mettant en forme pour être utilisé dans une vidéo de 1 minute max:",
+					Content: "Créé un texte de vidéo résumant en 1 minute max ceci:",
 				},
 				{
 					Role:    openai.ChatMessageRoleUser,
